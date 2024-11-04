@@ -1,0 +1,16 @@
+# docker-compose up -d
+
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: new_user
+      POSTGRES_PASSWORD: new_password
+      POSTGRES_DB: new_database
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
